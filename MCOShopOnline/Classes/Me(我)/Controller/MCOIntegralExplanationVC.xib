@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MCOIntegralExplanationVC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="积分说明：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8j-h4-hkI">
+                    <rect key="frame" x="15" y="36" width="77" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="1.积分可通过购买商品获取对应的积分，并且随数量积分累加。     " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfZ-yb-3iL">
+                    <rect key="frame" x="100" y="28" width="260" height="60"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="iVs-du-hqd"/>
+                    </constraints>
+                    <color key="textColor" red="0.25750165782493373" green="0.25750165782493373" blue="0.25750165782493373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="2.积分为白积分和红积分，购买商品等获取积分讲归为白积分，白积分会每日返回至账户红积分，红积分可用于体现或结算时抵消部分价钱。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4m-dJ-6F2">
+                    <rect key="frame" x="100" y="88" width="260" height="90"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="yeX-Mw-omN"/>
+                    </constraints>
+                    <color key="textColor" red="0.25750165780000001" green="0.25750165780000001" blue="0.25750165780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="积分使用：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8u-LT-u0D">
+                    <rect key="frame" x="15" y="191" width="77" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="200积分=1元，最低提现额度：100元(即2w积分)，产品支付时，抵消2陪的钱(即100积分=1元)。(注:最终解释权贵店家所有)" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2H-mw-vm3">
+                    <rect key="frame" x="100" y="182" width="260" height="78"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="78" id="ipU-ce-iy0"/>
+                    </constraints>
+                    <color key="textColor" red="0.25750165780000001" green="0.25750165780000001" blue="0.25750165780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推广说明：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vls-NS-oYt">
+                    <rect key="frame" x="15.5" y="289" width="76.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="有效推广指：别人注册时填写您的推广码，有效人数为2人及以内。有效推广人购买商品时所获积分也会归为推广人的个人积分。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4fL-39-voU">
+                    <rect key="frame" x="100" y="280" width="260" height="85"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="1eF-R0-aFM"/>
+                    </constraints>
+                    <color key="textColor" red="0.25750165780000001" green="0.25750165780000001" blue="0.25750165780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="y8u-LT-u0D" firstAttribute="top" secondItem="Z8j-h4-hkI" secondAttribute="bottom" constant="137" id="4rJ-tL-9Mc"/>
+                <constraint firstItem="y8u-LT-u0D" firstAttribute="leading" secondItem="Z8j-h4-hkI" secondAttribute="leading" id="5KV-Kl-1UE"/>
+                <constraint firstItem="4fL-39-voU" firstAttribute="top" secondItem="x2H-mw-vm3" secondAttribute="bottom" constant="20" id="7KZ-kP-SwE"/>
+                <constraint firstItem="x2H-mw-vm3" firstAttribute="trailing" secondItem="R4m-dJ-6F2" secondAttribute="trailing" id="9Eq-RQ-DLc"/>
+                <constraint firstItem="Z8j-h4-hkI" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="DDR-al-Ipd"/>
+                <constraint firstItem="x2H-mw-vm3" firstAttribute="leading" secondItem="R4m-dJ-6F2" secondAttribute="leading" id="IAN-94-HGL"/>
+                <constraint firstItem="QfZ-yb-3iL" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="28" id="K2u-Qo-1jc"/>
+                <constraint firstItem="R4m-dJ-6F2" firstAttribute="leading" secondItem="QfZ-yb-3iL" secondAttribute="leading" id="Ws8-2c-e26"/>
+                <constraint firstItem="Z8j-h4-hkI" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="36" id="Xee-e8-jX7"/>
+                <constraint firstItem="Vls-NS-oYt" firstAttribute="trailing" secondItem="y8u-LT-u0D" secondAttribute="trailing" id="cri-1T-B3N"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="QfZ-yb-3iL" secondAttribute="trailing" constant="15" id="gJn-lF-qgX"/>
+                <constraint firstItem="R4m-dJ-6F2" firstAttribute="trailing" secondItem="QfZ-yb-3iL" secondAttribute="trailing" id="ijK-XG-enx"/>
+                <constraint firstItem="QfZ-yb-3iL" firstAttribute="leading" secondItem="Z8j-h4-hkI" secondAttribute="trailing" constant="8" id="mMw-n9-9wz"/>
+                <constraint firstItem="y8u-LT-u0D" firstAttribute="trailing" secondItem="Z8j-h4-hkI" secondAttribute="trailing" id="o0g-BW-50C"/>
+                <constraint firstItem="R4m-dJ-6F2" firstAttribute="top" secondItem="QfZ-yb-3iL" secondAttribute="bottom" id="s07-3i-8Fb"/>
+                <constraint firstItem="Vls-NS-oYt" firstAttribute="top" secondItem="y8u-LT-u0D" secondAttribute="bottom" constant="80" id="tay-Jh-Be2"/>
+                <constraint firstItem="4fL-39-voU" firstAttribute="leading" secondItem="x2H-mw-vm3" secondAttribute="leading" id="wV9-lo-ZHN"/>
+                <constraint firstItem="4fL-39-voU" firstAttribute="trailing" secondItem="x2H-mw-vm3" secondAttribute="trailing" id="xna-9i-zMP"/>
+                <constraint firstItem="x2H-mw-vm3" firstAttribute="top" secondItem="R4m-dJ-6F2" secondAttribute="bottom" constant="4" id="zuK-0x-d5m"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="32.5" y="91.5"/>
+        </view>
+    </objects>
+</document>

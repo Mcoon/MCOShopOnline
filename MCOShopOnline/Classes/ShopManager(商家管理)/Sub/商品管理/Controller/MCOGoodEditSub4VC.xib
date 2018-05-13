@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MCOGoodEditSub4VC">
+            <connections>
+                <outlet property="valueField" destination="YKo-OD-X7E" id="pjc-X1-aid"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YKo-OD-X7E" customClass="MCOClassifyTextField">
+                    <rect key="frame" x="15" y="45" width="345" height="45"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="F3r-Xs-85q"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abe-S4-1Gh">
+                    <rect key="frame" x="88" y="100" width="199" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="VAc-gd-7uf"/>
+                        <constraint firstAttribute="width" constant="199" id="uM6-8A-5nV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="若无所属分类，请点击创建？">
+                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addClassifyClick" destination="-1" eventType="touchUpInside" id="PUk-6r-Eqa"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="YKo-OD-X7E" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="Bau-Lv-QTb"/>
+                <constraint firstItem="YKo-OD-X7E" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="45" id="Buy-Xx-emI"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="YKo-OD-X7E" secondAttribute="trailing" constant="15" id="SfQ-6H-eMf"/>
+                <constraint firstItem="Abe-S4-1Gh" firstAttribute="top" secondItem="YKo-OD-X7E" secondAttribute="bottom" constant="10" id="b14-Op-ALI"/>
+                <constraint firstItem="Abe-S4-1Gh" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="qK8-Ch-Kje"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="33.5" y="80.5"/>
+        </view>
+    </objects>
+</document>

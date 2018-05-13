@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="KGk-i7-Jjw" customClass="MCOGoodNumCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择数量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46q-Hl-w2x">
+                        <rect key="frame" x="21" y="16" width="62" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="cGd-5v-dkc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTf-34-2CL">
+                        <rect key="frame" x="270" y="41" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="gLh-79-DoK"/>
+                            <constraint firstAttribute="width" constant="40" id="it1-0h-MNE"/>
+                        </constraints>
+                        <state key="normal" image="minus_circle"/>
+                        <connections>
+                            <action selector="minusClick" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XIw-6f-d8V"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvi-uS-JhY">
+                        <rect key="frame" x="225" y="51.5" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="gWT-bp-bod"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G22-rC-qBc">
+                        <rect key="frame" x="182" y="41" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="0pv-A5-krJ"/>
+                            <constraint firstAttribute="height" constant="40" id="Ei4-1N-GiC"/>
+                        </constraints>
+                        <state key="normal" image="plus_circle"/>
+                        <connections>
+                            <action selector="plusClick" destination="KGk-i7-Jjw" eventType="touchUpInside" id="quO-4r-yTV"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="46q-Hl-w2x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="1ry-81-VZZ"/>
+                    <constraint firstItem="Gvi-uS-JhY" firstAttribute="leading" secondItem="G22-rC-qBc" secondAttribute="trailing" constant="3" id="5Py-a5-9ft"/>
+                    <constraint firstAttribute="trailing" secondItem="PTf-34-2CL" secondAttribute="trailing" constant="10" id="Mfy-h4-bk7"/>
+                    <constraint firstItem="46q-Hl-w2x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="NpS-Qq-L69"/>
+                    <constraint firstAttribute="bottom" secondItem="PTf-34-2CL" secondAttribute="bottom" constant="11.5" id="Tpp-N6-dLB"/>
+                    <constraint firstItem="PTf-34-2CL" firstAttribute="leading" secondItem="Gvi-uS-JhY" secondAttribute="trailing" constant="3" id="rhJ-22-lOT"/>
+                    <constraint firstItem="G22-rC-qBc" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="-1" id="uQS-gb-L8g"/>
+                    <constraint firstItem="Gvi-uS-JhY" firstAttribute="centerY" secondItem="PTf-34-2CL" secondAttribute="centerY" constant="1.5" id="v0U-jj-62z"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="46q-Hl-w2x" secondAttribute="bottom" constant="48" id="yq2-U6-t0w"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="minusBtn" destination="PTf-34-2CL" id="uZV-ja-jGu"/>
+                <outlet property="numLabel" destination="Gvi-uS-JhY" id="fm1-3P-Keu"/>
+                <outlet property="plusBtn" destination="G22-rC-qBc" id="Eic-dR-kX8"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="95.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="minus_circle" width="373" height="373"/>
+        <image name="plus_circle" width="373" height="373"/>
+    </resources>
+</document>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MCOShopDynamicViC">
+            <connections>
+                <outlet property="photoArea" destination="S9A-Xv-QMU" id="ITX-fc-I4q"/>
+                <outlet property="selectBtn" destination="Wop-mH-Hst" id="bsF-OC-bvT"/>
+                <outlet property="textContent" destination="iIe-eh-Ep7" id="TnM-vI-eNt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iIe-eh-Ep7">
+                    <rect key="frame" x="20" y="39" width="335" height="120"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="NbM-CA-dyi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="填写文字内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-uG-8uh">
+                    <rect key="frame" x="141" y="13" width="92" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wop-mH-Hst">
+                    <rect key="frame" x="141" y="179" width="92" height="30"/>
+                    <color key="backgroundColor" red="0.93434723980000001" green="0.60606636420000004" blue="0.065087275469999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="选择动态图片">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="selectPhoto" destination="-1" eventType="touchUpInside" id="OVh-9O-TbO"/>
+                    </connections>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9A-Xv-QMU">
+                    <rect key="frame" x="10" y="217" width="355" height="376"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="JDv-uG-8uh" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="13" id="4RC-mN-Sj2"/>
+                <constraint firstItem="S9A-Xv-QMU" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="E4U-uv-2Ne"/>
+                <constraint firstItem="Wop-mH-Hst" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="IDb-Q4-ngD"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="S9A-Xv-QMU" secondAttribute="trailing" constant="10" id="KSH-lb-AQ0"/>
+                <constraint firstItem="JDv-uG-8uh" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="NyR-pn-z7i"/>
+                <constraint firstItem="Wop-mH-Hst" firstAttribute="top" secondItem="iIe-eh-Ep7" secondAttribute="bottom" constant="20" id="Ubp-df-tde"/>
+                <constraint firstItem="iIe-eh-Ep7" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="VQV-6E-iB5"/>
+                <constraint firstAttribute="bottom" secondItem="S9A-Xv-QMU" secondAttribute="bottom" constant="10" id="asi-fE-OdL"/>
+                <constraint firstItem="iIe-eh-Ep7" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="dDM-HZ-tt3"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="iIe-eh-Ep7" secondAttribute="trailing" constant="20" id="jkR-W6-xYj"/>
+                <constraint firstItem="S9A-Xv-QMU" firstAttribute="top" secondItem="Wop-mH-Hst" secondAttribute="bottom" constant="8" id="n8m-hk-gg1"/>
+                <constraint firstItem="iIe-eh-Ep7" firstAttribute="top" secondItem="JDv-uG-8uh" secondAttribute="bottom" constant="8" id="w4b-pj-ccB"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,20 @@
+PODS:
+  - JCore (1.1.9)
+  - JMessage (3.5.1):
+    - JCore (~> 1.1.7)
+
+DEPENDENCIES:
+  - JMessage
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JCore
+    - JMessage
+
+SPEC CHECKSUMS:
+  JCore: 27598485098d0db99d2812cba048003457d08cfb
+  JMessage: a3ba6bcac624d3c04567476e02359205dd19bb1f
+
+PODFILE CHECKSUM: 811ad4c710fe56dee193b46e5ad8518b3173941d
+
+COCOAPODS: 1.5.2

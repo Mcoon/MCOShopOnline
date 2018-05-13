@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fza-mU-kmh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cart View Controller-->
+        <scene sceneID="vj6-fl-NRM">
+            <objects>
+                <viewController id="fza-mU-kmh" customClass="MCOCartViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hEU-qe-ZHy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5aU-fa-KkA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hry-ky-oIA">
+                                <rect key="frame" x="0.0" y="569" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRM-S8-WG5">
+                                        <rect key="frame" x="295" y="0.0" width="80" height="50"/>
+                                        <color key="backgroundColor" red="0.21557137301012205" green="0.69116031967445635" blue="0.87860881979695438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="1cy-os-tKk"/>
+                                        </constraints>
+                                        <state key="normal" title="前去结算">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="payForMoney" destination="fza-mU-kmh" eventType="touchUpInside" id="EbR-KH-rNt"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合计(元)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzv-tX-2pj">
+                                        <rect key="frame" x="10" y="17.5" width="50" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyX-ce-jex">
+                                        <rect key="frame" x="68" y="14.5" width="44" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="1" green="0.16710255020000001" blue="0.25597087969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.96560329861111116" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Uzv-tX-2pj" firstAttribute="leading" secondItem="hry-ky-oIA" secondAttribute="leading" constant="10" id="BHi-3e-Hxy"/>
+                                    <constraint firstItem="TyX-ce-jex" firstAttribute="leading" secondItem="Uzv-tX-2pj" secondAttribute="trailing" constant="8" id="PCW-3g-kXm"/>
+                                    <constraint firstAttribute="bottom" secondItem="fRM-S8-WG5" secondAttribute="bottom" id="RKX-VE-7sc"/>
+                                    <constraint firstAttribute="height" constant="50" id="VPp-uc-h66"/>
+                                    <constraint firstItem="Uzv-tX-2pj" firstAttribute="centerY" secondItem="hry-ky-oIA" secondAttribute="centerY" id="fuf-6A-ekU"/>
+                                    <constraint firstItem="TyX-ce-jex" firstAttribute="centerY" secondItem="hry-ky-oIA" secondAttribute="centerY" id="n50-pW-CgO"/>
+                                    <constraint firstAttribute="trailing" secondItem="fRM-S8-WG5" secondAttribute="trailing" id="nCR-r7-jJd"/>
+                                    <constraint firstItem="fRM-S8-WG5" firstAttribute="top" secondItem="hry-ky-oIA" secondAttribute="top" id="t3x-XG-PRU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5aU-fa-KkA" firstAttribute="top" secondItem="CLm-Az-BCW" secondAttribute="top" constant="-20" id="2ci-av-Sgg"/>
+                            <constraint firstItem="CLm-Az-BCW" firstAttribute="trailing" secondItem="5aU-fa-KkA" secondAttribute="trailing" id="4SZ-f8-TzR"/>
+                            <constraint firstItem="hry-ky-oIA" firstAttribute="trailing" secondItem="CLm-Az-BCW" secondAttribute="trailing" id="IDP-Vb-5EI"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="5aU-fa-KkA" secondAttribute="bottom" id="MzU-Gq-dqF"/>
+                            <constraint firstAttribute="bottom" secondItem="hry-ky-oIA" secondAttribute="bottom" constant="48" id="dOk-yb-xor"/>
+                            <constraint firstItem="5aU-fa-KkA" firstAttribute="leading" secondItem="CLm-Az-BCW" secondAttribute="leading" id="mho-KP-Xeo"/>
+                            <constraint firstItem="hry-ky-oIA" firstAttribute="leading" secondItem="CLm-Az-BCW" secondAttribute="leading" id="p7r-Ic-7Uj"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="5aU-fa-KkA" secondAttribute="bottom" id="rKW-1V-5WX"/>
+                            <constraint firstItem="CLm-Az-BCW" firstAttribute="trailing" secondItem="5aU-fa-KkA" secondAttribute="trailing" id="w5X-9s-zql"/>
+                            <constraint firstItem="5aU-fa-KkA" firstAttribute="leading" secondItem="CLm-Az-BCW" secondAttribute="leading" id="xh9-pH-oxf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CLm-Az-BCW"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="5aU-fa-KkA" id="BVs-F9-saW"/>
+                        <outlet property="totalPriceLabel" destination="TyX-ce-jex" id="DnK-eN-n1z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zWg-D8-FAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="63.418290854572717"/>
+        </scene>
+    </scenes>
+</document>

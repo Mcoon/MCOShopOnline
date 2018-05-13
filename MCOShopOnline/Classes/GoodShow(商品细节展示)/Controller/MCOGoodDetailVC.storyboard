@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uIk-wL-Jvt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Good DetailVC-->
+        <scene sceneID="owj-Sm-iXf">
+            <objects>
+                <viewController id="uIk-wL-Jvt" customClass="MCOGoodDetailVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gt0-RD-uPh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="oUw-8d-nEk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mmp-I9-tZ8">
+                                <rect key="frame" x="0.0" y="553" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ah-Bd-YOL">
+                                        <rect key="frame" x="296" y="0.0" width="80" height="50"/>
+                                        <color key="backgroundColor" red="0.33894692025781925" green="0.67220259524871517" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="3FW-9I-811"/>
+                                        </constraints>
+                                        <state key="normal" title="立即购买">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buyNowClick" destination="uIk-wL-Jvt" eventType="touchUpInside" id="CHn-zh-V0K"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkP-A9-Y1A">
+                                        <rect key="frame" x="171" y="10" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="timeline_icon_comment"/>
+                                        <connections>
+                                            <action selector="chatClick" destination="uIk-wL-Jvt" eventType="touchUpInside" id="EcA-Cf-cs3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9Ah-Bd-YOL" secondAttribute="trailing" constant="-1" id="NBv-l4-tX0"/>
+                                    <constraint firstAttribute="height" constant="50" id="T3A-Q4-w4y"/>
+                                    <constraint firstItem="9Ah-Bd-YOL" firstAttribute="top" secondItem="Mmp-I9-tZ8" secondAttribute="top" id="Up2-6M-g6B"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Ah-Bd-YOL" secondAttribute="bottom" id="afa-RD-9sv"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVW-66-aqQ">
+                                <rect key="frame" x="217" y="553" width="80" height="50"/>
+                                <color key="backgroundColor" red="0.53778256628027998" green="0.76829935086324264" blue="0.9128746285269036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="加入购物车">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showChooseVC" destination="uIk-wL-Jvt" eventType="touchUpInside" id="r7z-IC-mBc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IVW-66-aqQ" firstAttribute="bottom" secondItem="oUw-8d-nEk" secondAttribute="bottom" id="6Sf-dz-gh4"/>
+                            <constraint firstItem="Mmp-I9-tZ8" firstAttribute="trailing" secondItem="ndt-g0-ecn" secondAttribute="trailing" id="70Z-UT-2jQ"/>
+                            <constraint firstItem="ndt-g0-ecn" firstAttribute="trailing" secondItem="IVW-66-aqQ" secondAttribute="trailing" constant="78" id="77d-2G-imk"/>
+                            <constraint firstAttribute="bottom" secondItem="Mmp-I9-tZ8" secondAttribute="bottom" id="Kfr-XA-aFc"/>
+                            <constraint firstItem="ndt-g0-ecn" firstAttribute="trailing" secondItem="oUw-8d-nEk" secondAttribute="trailing" id="LXp-zC-ETD"/>
+                            <constraint firstItem="oUw-8d-nEk" firstAttribute="leading" secondItem="ndt-g0-ecn" secondAttribute="leading" id="OOQ-HU-VCw"/>
+                            <constraint firstItem="IVW-66-aqQ" firstAttribute="leading" secondItem="ndt-g0-ecn" secondAttribute="leading" constant="217" id="Pcv-FC-fw3"/>
+                            <constraint firstItem="Mmp-I9-tZ8" firstAttribute="leading" secondItem="ndt-g0-ecn" secondAttribute="leading" id="WMs-tU-krA"/>
+                            <constraint firstItem="oUw-8d-nEk" firstAttribute="top" secondItem="ndt-g0-ecn" secondAttribute="top" id="jWl-av-gHP"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="oUw-8d-nEk" secondAttribute="bottom" id="kms-xr-jaY"/>
+                            <constraint firstItem="IVW-66-aqQ" firstAttribute="top" secondItem="Mmp-I9-tZ8" secondAttribute="top" id="sPj-hU-AOC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ndt-g0-ecn"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="oUw-8d-nEk" id="Mq6-ge-oiY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEa-XG-zQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="292" y="287.40629685157421"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="timeline_icon_comment" width="18" height="18"/>
+    </resources>
+</document>
