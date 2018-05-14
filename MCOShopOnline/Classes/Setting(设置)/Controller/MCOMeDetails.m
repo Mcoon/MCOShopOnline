@@ -45,15 +45,15 @@
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"个人头像";
-            cell.imageView.image = [UIImage imageNamed:@"setup-head-default"];
+            cell.imageView.image = [UIImage imageNamed:@"login_13"];
             break;
         case 1:
             cell.textLabel.text = @"个人信息";
-            cell.imageView.image = [UIImage imageNamed:@"setup-head-default"];
+            cell.imageView.image = [UIImage imageNamed:@"login_02"];
             break;
         case 2:
             cell.textLabel.text = @"手机号";
-            cell.imageView.image = [UIImage imageNamed:@"setup-head-default"];
+            cell.imageView.image = [UIImage imageNamed:@"menu_16"];
             cell.detailTextLabel.textColor = [UIColor grayColor];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             NSString *str = [defaults objectForKey:@"user_phone"];

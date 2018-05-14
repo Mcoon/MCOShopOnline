@@ -36,7 +36,7 @@
     [self setupChatTable];
     
     [self getConversationList];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getConversationList) name:@"logSucuess" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getConversationList) name:@"imlogSucuess" object:nil];
 }
 
 - (void)setupNavigation {

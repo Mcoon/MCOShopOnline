@@ -96,7 +96,7 @@ static NSString * const ID = @"cell";
             case 1:
                 {
                     cell.textLabel.text = [self sizeStr];
-                    cell.imageView.image = [UIImage imageNamed:@"friendsRecommentIcon"];
+                    cell.imageView.image = [UIImage imageNamed:@"login_close_icon"];
                 }
                 break;
             case 2:

@@ -21,6 +21,10 @@
 #import "MCOSelfOrder.h"
 #import "MCOSelecrtAddrfViewController.h"
 #import "MCOCartPayViewController.h"
+#import "MBProgressHUD+XMG.h"
+#import "AFNetworking.h"
+#import <JMessage/JMessage.h>
+#import "JCHATConversationViewController.h"
 static NSString * const ID = @"cellgood";
 static NSString * const CollectID = @"cellphoto";
 static NSInteger const cols = 1;
@@ -417,9 +421,53 @@ static CGFloat const margin = 0;
     }];
 }
 - (IBAction)chatClick {
-    UIStoryboard *storyboardcart = [UIStoryboard storyboardWithName:NSStringFromClass([ViewController class]) bundle:nil];
-    ViewController *vc = [storyboardcart instantiateInitialViewController];
-    [self.navigationController pushViewController:vc animated:YES];
+//    UIStoryboard *storyboardcart = [UIStoryboard storyboardWithName:NSStringFromClass([ViewController class]) bundle:nil];
+//    ViewController *vc = [storyboardcart instantiateInitialViewController];
+//    [self.navigationController pushViewController:vc animated:YES];
+    [MBProgressHUD showMessage:@"正在联线..."];
+    // 1.创建请求会话管理者
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    
+    //支持text/html
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    //resp内容为非json处理方法
+    mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [mgr POST:@"http://106.14.145.208:80/ShopMall/BackShopTalkMaster" parameters:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [MBProgressHUD hideHUD];
+        NSString *resp = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+        if([resp isEqualToString:@"error"])
+        {
+            [MBProgressHUD showError:@"网络错误，请重试！"];
+            
+        }
+        else
+        {
+            [JMSGConversation createSingleConversationWithUsername:resp completionHandler:^(id resultObject, NSError *error) {
+                if (!error) {
+                    //创建单聊会话成功， resultObject为创建的会话
+                    JCHATConversationViewController *sendMessageCtl =[[JCHATConversationViewController alloc] init];
+                    sendMessageCtl.hidesBottomBarWhenPushed = YES;
+                    sendMessageCtl.superViewController = self;
+                    JMSGConversation *conversation = resultObject;
+                    sendMessageCtl.conversation = conversation;
+                    [self.navigationController pushViewController:sendMessageCtl animated:YES];
+                    
+                   
+                } else {
+                    //创建单聊会话失败
+                    [MBProgressHUD showError:@"商家忙，请稍后再试！"];
+                }
+            }];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showError:@"网络错误，请重试！"];
+    }];
+
 }
 
 

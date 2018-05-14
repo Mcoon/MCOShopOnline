@@ -177,15 +177,17 @@
 #pragma mark -im登陆
                 [JMSGUser loginWithUsername:self.loginPhone.text password:self.loginPwnd.text handler:^(NSArray<__kindof JMSGDeviceInfo *> * _Nonnull devices, NSError * _Nonnull error) {
 //                    NSLog(@"devices:%@",devices);
-//                    if (!error) {
+                    if (!error) {
 //                        NSLog(@"yell");
-//                    } else {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"imlogSucuess" object:nil userInfo:nil];
+                    } else {
 //                        NSLog(@"fuck");
-//                    }
+                    }
                 }  ];
                 
                 //发送登录成功到主界面界面
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"logSucuess" object:nil userInfo:nil];
+                
             }
             
             
