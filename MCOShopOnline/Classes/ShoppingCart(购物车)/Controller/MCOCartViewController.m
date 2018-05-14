@@ -91,9 +91,6 @@ static NSString * const ID = @"cartcell";
         //没有登录跳转到登录注册界面
         XMGLoginRegisterViewController *vc = [[XMGLoginRegisterViewController alloc] init];
         [self presentViewController:vc animated:YES completion:nil];
-
-       
-        
       
     }
     else

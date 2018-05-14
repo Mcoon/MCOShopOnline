@@ -11,6 +11,8 @@
 #import "MCOTMsgVC.h"
 #import "MCOTitleButton.h"
 #import "JCHATConversationListViewController.h"
+#define MCOIsAutoLogin @"isAutoLogin"
+#import "XMGLoginRegisterViewController.h"
 /** TitleButton被重复点击的通知 */
 NSString  * const MCOTitleButtonDidRepeatClickNotification = @"MCOTitleButtonDidRepeatClickNotification";
 @interface MCOTalkVC ()<UIScrollViewDelegate>
@@ -45,6 +47,20 @@ NSString  * const MCOTitleButtonDidRepeatClickNotification = @"MCOTitleButtonDid
     
     // 添加第0个子控制器的view
     [self addChildVcViewIntoScrollView:0];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(![defaults boolForKey:MCOIsAutoLogin])
+    {
+        [self.tabBarController setSelectedIndex:0];
+        
+        //没有登录跳转到登录注册界面
+        XMGLoginRegisterViewController *vc = [[XMGLoginRegisterViewController alloc] init];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
 }
 
 /**

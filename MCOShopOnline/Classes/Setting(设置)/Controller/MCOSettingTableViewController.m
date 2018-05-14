@@ -215,7 +215,6 @@ static NSString * const ID = @"cell";
         //发送个人详情界面更新数据
         [[NSNotificationCenter defaultCenter] postNotificationName:@"quitLog" object:nil userInfo:nil];
         
-        
         #pragma mark -im退出
         [JMSGUser logout:^(id resultObject, NSError *error) {
 //            if (!error) {

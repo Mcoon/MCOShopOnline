@@ -332,6 +332,14 @@ static CGFloat const margin = 1;
 
 -(void)tgview
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(![defaults boolForKey:MCOIsAutoLogin])
+    {
+        //没有登录跳转到登录注册界面
+        XMGLoginRegisterViewController *vc = [[XMGLoginRegisterViewController alloc] init];
+        [self presentViewController:vc animated:YES completion:nil];
+        return;
+    }
     MCOTGViewController *vc = [[MCOTGViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
