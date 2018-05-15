@@ -45,8 +45,10 @@ static NSString * const ID = @"trendcell";
     [super viewDidLoad];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     
     [self setupNavBar];
+    
     
     // 处理cell间距,默认tableView分组样式,有额外头部和尾部间距
     

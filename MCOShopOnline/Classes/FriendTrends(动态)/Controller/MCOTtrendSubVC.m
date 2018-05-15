@@ -24,6 +24,7 @@ static NSString * const ID = @"subtrendcell";
     [super viewDidLoad];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     // 处理cell间距,默认tableView分组样式,有额外头部和尾部间距
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = 10;

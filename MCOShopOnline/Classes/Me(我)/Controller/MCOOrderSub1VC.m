@@ -39,7 +39,7 @@ static NSString * const ID = @"selfordcell";
     [super viewDidLoad];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     
     // 注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MCOSelfOrderCell" bundle:nil] forCellReuseIdentifier:ID];

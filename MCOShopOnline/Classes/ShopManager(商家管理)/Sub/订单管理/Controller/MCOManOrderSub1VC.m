@@ -54,7 +54,7 @@ static NSString * const ID = @"shopordcell1";
     
     // 注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MCOShopOrderCell1" bundle:nil] forCellReuseIdentifier:ID];
-    
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     //注册通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendGood:) name:@"sendGood" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewAddr:) name:@"viewAddr" object:nil];

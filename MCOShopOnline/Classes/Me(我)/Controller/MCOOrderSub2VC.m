@@ -40,7 +40,7 @@ static NSString * const ID = @"selfordcell2";
     [super viewDidLoad];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     self.tableView.contentInset = UIEdgeInsetsMake(4, 0, 0, 0);

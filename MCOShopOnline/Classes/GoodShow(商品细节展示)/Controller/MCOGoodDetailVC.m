@@ -67,6 +67,7 @@ static CGFloat const margin = 0;
     self.tableView.sectionFooterHeight = 10;
     self.tableView.contentInset = UIEdgeInsetsMake(15, 0, 0, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 
     MCOGoodTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"MCOGoodTableViewCell" owner:nil options:nil] firstObject];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
