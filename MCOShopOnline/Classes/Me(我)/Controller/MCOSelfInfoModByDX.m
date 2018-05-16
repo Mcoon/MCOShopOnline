@@ -63,6 +63,7 @@
 
 -(void)modify
 {
+   
     if(self.valueField.text.length == 0 || self.codeField.text.length == 0)
     {
         [MBProgressHUD showError:@"验证信息不能为空！"];
@@ -77,133 +78,119 @@
     [SMSSDK commitVerificationCode:self.codeField.text phoneNumber:self.phoneField.text zone:@"86" result:^(NSError *error) {
         if (!error)
         {
+            [MBProgressHUD showMessage:@"信息修改中..."];
             // 验证成功
-            [MBProgressHUD showMessage:@"更改中..."];
-            
-            if([self.type isEqualToString:@"0"])//更改手机号
-            {
+            AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+            //支持text/html
+            manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+            //resp内容为非json处理方法
+            manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+            NSDictionary *dict = @{@"id":self.phoneField.text,@"key":self.zdm,@"value":self.valueField.text};
+            [manager POST:@"http://106.14.145.208/ShopMall/UpdateForUserInfo" parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
-                AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-                //支持text/html
-                manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-                //resp内容为非json处理方法
-                manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-                NSDictionary *dict = @{@"id":self.phoneField.text,@"key":self.zdm,@"value":self.valueField.text};
-                [manager POST:@"http://106.14.145.208/ShopMall/UpdateForUserInfo" parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                    NSString *resp = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
-                    if([resp isEqualToString:@"ok"])
+                NSString *resp = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+                if([resp isEqualToString:@"ok"])
+                {
+                 
+                    
+                    if([self.type isEqualToString:@"1"])
                     {
-                        //注册成功
-                        
-                        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                        [defaults setObject:self.valueField.text forKey:self.zdm];
                         [MBProgressHUD hideHUD];
                         [MBProgressHUD showSuccess:@"修改成功！"];
                         [self dismissViewControllerAnimated:YES completion:nil];
-
                     }
-                    else
+                    else//更改手机号
                     {
-                        //注册失败
-                        [MBProgressHUD hideHUD];
-                        [MBProgressHUD showError:@"网络发生错误，请稍后再试！"];
+                        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                        [defaults setObject:self.valueField.text forKey:self.zdm];
+                        [defaults synchronize];
+                        //im重新创建并复制信息过去
+                        [self uploadIMInfo];
                     }
-                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                    //注册失败
+                }
+                else
+                {
+                    //失败
                     [MBProgressHUD hideHUD];
                     [MBProgressHUD showError:@"网络发生错误，请稍后再试！"];
-                }];
-            
-            }
-            else//更改密码
-            {
-                AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-                //支持text/html
-                manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-                //resp内容为非json处理方法
-                manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-                NSDictionary *dict = @{@"ord_user":self.phoneField.text};
-                [manager POST:@"http://106.14.145.208/ShopMall/BackAppUserPassword" parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                    
-                    NSString *resp = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
-                    if([resp isEqualToString:@"error"])
-                    {
-                        [MBProgressHUD hideHUD];
-                        [MBProgressHUD showError:@"服务器忙，请稍后再试！"];
-                    }
-                    else
-                    {
-                        //登陆im
-                        [JMSGUser loginWithUsername:self.phoneField.text password:resp completionHandler:^(id resultObject, NSError *error) {
-                            if (!error) {
-                                //登录成功
-                                [JMSGUser updateMyPasswordWithNewPassword:self.valueField.text
-                                                              oldPassword:resp
-                                                        completionHandler:^(id resultObject, NSError *error) {
-                                                            if (!error) {
-                                                                //更新
-                                                                AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-                                                                //支持text/html
-                                                                manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-                                                                //resp内容为非json处理方法
-                                                                manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-                                                                NSDictionary *dict = @{@"id":self.phoneField.text,@"key":self.zdm,@"value":self.valueField.text};
-                                                                [manager POST:@"http://106.14.145.208/ShopMall/UpdateForUserInfo" parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                                                                    NSString *resp = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
-                                                                    if([resp isEqualToString:@"ok"])
-                                                                    {
-                                                                        //注册成功
-                                                                        [MBProgressHUD hideHUD];
-                                                                        [MBProgressHUD showSuccess:@"修改成功！"];
-                                                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                                                        
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        //注册失败
-                                                                        [MBProgressHUD hideHUD];
-                                                                        [MBProgressHUD showError:@"网络发生错误，请稍后再试！"];
-                                                                    }
-                                                                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                                                                    //注册失败
-                                                                    [MBProgressHUD hideHUD];
-                                                                    [MBProgressHUD showError:@"网络发生错误，请稍后再试！"];
-                                                                }];
-                                                            } else {
-                                                                //更新密码失败
-                                                                [MBProgressHUD hideHUD];
-                                                                [MBProgressHUD showError:@"服务器忙，请稍后再试！"];
-                                                            }
-                                                        }];
-                            } else {
-                                //登录失败
-                                [MBProgressHUD hideHUD];
-                                [MBProgressHUD showError:@"服务器忙，请稍后再试！"];
-                            }
-                        }];
-                    }
-                    
-                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                    [MBProgressHUD hideHUD];
-                    [MBProgressHUD showError:@"网络发生错误，请稍后再试！"];
-                }];
-            }
+                }
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                //失败
+                [MBProgressHUD hideHUD];
+                [MBProgressHUD showError:@"网络发生错误，请稍后再试！"];
+            }];
         }
         else
         {
-            [MBProgressHUD hideHUD];
             [MBProgressHUD showError:@"验证码错误，请重新填写！"];
         }
-        }];
-    
+    }];
     
         
 }
 
--(void)updateIMPwnd
+-(void)uploadIMInfo
 {
- 
+    [JMSGUser loginWithUsername:self.phoneField.text password:self.phoneField.text completionHandler:^(id resultObject, NSError *error) {
+        if (!error) {
+            //登录成功
+            JMSGUser *olduserinfo = [JMSGUser myInfo];
+            NSString *myName = [olduserinfo displayName];
+            JMSGUserInfo *userInfo = [[JMSGUserInfo alloc] init];
+            if(![myName isEqualToString:self.phoneField.text])
+            {
+                userInfo.nickname = myName;
+            }
+            [olduserinfo largeAvatarData:^(NSData *data, NSString *objectId, NSError *error) {
+                if (!error) {
+                    //下载成功
+                    userInfo.avatarData = data;
+                    [JMSGUser registerWithUsername:self.valueField.text password:self.valueField.text userInfo:userInfo completionHandler:^(id resultObject, NSError *error) {
+                        if (!error) {
+                            //注册成功
+//                             NSLog(@"sucess");
+                            [JMSGUser loginWithUsername:self.valueField.text password:self.valueField.text completionHandler:^(id resultObject, NSError *error) {
+                                if (!error) {
+                                    //登录成功
+                                    [[NSNotificationCenter defaultCenter] postNotificationName:@"imlogSucuess" object:nil userInfo:nil];
+                                } else {
+                                    //登录失败
+                                    [MBProgressHUD hideHUD];
+                                    [MBProgressHUD showError:@"服务器忙，请重试！"];
+                                }
+                            }];
+                        } else {
+                            //注册失败
+//                            NSLog(@"error");
+                            [MBProgressHUD hideHUD];
+                            [MBProgressHUD showError:@"聊天系统离线，请联系管理员！"];
+                        }
+                    }];
+                }
+                else
+                {
+                    [JMSGUser registerWithUsername:self.valueField.text password:self.valueField.text userInfo:userInfo completionHandler:^(id resultObject, NSError *error) {
+                        if (!error) {
+                            //注册成功
+//                            NSLog(@"sucess");
+                        } else {
+                            //注册失败
+//                            NSLog(@"error");
+                            [MBProgressHUD hideHUD];
+                            [MBProgressHUD showError:@"聊天系统离线，请联系管理员！"];
+                        }
+                    }];
+                }
+            }];
+            
+        } else {
+            //登录失败
+            [MBProgressHUD hideHUD];
+            [MBProgressHUD showError:@"聊天系统离线，请联系管理员！"];
+        }
+    }];
 }
+
 
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

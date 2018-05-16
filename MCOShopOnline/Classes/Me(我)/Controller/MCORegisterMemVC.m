@@ -176,7 +176,7 @@
                 if([resp isEqualToString:@"ok"])
                 {
                     //注册成功
-                    [JMSGUser registerWithUsername:self.phoneTF.text password:self.pwsdTF.text completionHandler:^(id resultObject, NSError *error) {
+                    [JMSGUser registerWithUsername:self.phoneTF.text password:self.phoneTF.text completionHandler:^(id resultObject, NSError *error) {
                         if(error == nil)
                         {
                             [MBProgressHUD showSuccess:@"注册成功"];

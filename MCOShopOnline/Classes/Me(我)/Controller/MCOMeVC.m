@@ -462,7 +462,7 @@ static CGFloat const margin = 1;
             break;
         case 1:
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"开店" message:@"请联系***********" delegate:self cancelButtonTitle:@"好的" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"开店" message:@"请联系商家" delegate:self cancelButtonTitle:@"好的" otherButtonTitles:nil];
             
             [alert show];
         }

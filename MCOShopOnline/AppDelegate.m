@@ -55,7 +55,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([defaults boolForKey:MCOIsAutoLogin])
     {
-        [JMSGUser loginWithUsername:[defaults objectForKey:@"user_phone"] password:[defaults objectForKey:@"user_paswprd"] handler:^(NSArray<__kindof JMSGDeviceInfo *> * _Nonnull devices, NSError * _Nonnull error) {
+        [JMSGUser loginWithUsername:[defaults objectForKey:@"user_phone"] password:[defaults objectForKey:@"user_phone"] handler:^(NSArray<__kindof JMSGDeviceInfo *> * _Nonnull devices, NSError * _Nonnull error) {
 //            NSLog(@"devices:%@",devices);
 //            if (!error) {
 //                NSLog(@"yell");

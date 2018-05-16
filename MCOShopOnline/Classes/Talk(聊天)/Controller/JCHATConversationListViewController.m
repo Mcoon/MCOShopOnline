@@ -34,7 +34,7 @@
     [self addNotifications];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self setupChatTable];
-    
+    [self addDelegate];
     [self getConversationList];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getConversationList) name:@"imlogSucuess" object:nil];
 }
@@ -369,7 +369,7 @@ NSInteger sortType(id object1,id object2,void *cha) {
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"JCHATConversationListCell";
     JCHATConversationListCell *cell = (JCHATConversationListCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     JMSGConversation *conversation =[_conversationArr objectAtIndex:indexPath.row];
     [cell setCellDataWithConversation:conversation];
     return cell;
@@ -399,6 +399,9 @@ NSInteger sortType(id object1,id object2,void *cha) {
 
     NSInteger badge = _unreadCount - [conversation.unreadCount integerValue];
     [self saveBadge:badge];
+    [conversation clearUnreadCount];
+    [self.chatTableView reloadData];
+   
 }
 
 - (void)saveBadge:(NSInteger)badge {

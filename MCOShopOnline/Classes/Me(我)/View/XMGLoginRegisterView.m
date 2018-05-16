@@ -175,7 +175,7 @@
                 [defaults synchronize];
                 
 #pragma mark -im登陆
-                [JMSGUser loginWithUsername:self.loginPhone.text password:self.loginPwnd.text handler:^(NSArray<__kindof JMSGDeviceInfo *> * _Nonnull devices, NSError * _Nonnull error) {
+                [JMSGUser loginWithUsername:self.loginPhone.text password:self.loginPhone.text handler:^(NSArray<__kindof JMSGDeviceInfo *> * _Nonnull devices, NSError * _Nonnull error) {
 //                    NSLog(@"devices:%@",devices);
                     if (!error) {
 //                        NSLog(@"yell");
