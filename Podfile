@@ -3,5 +3,5 @@
 
 target 'MCOShopOnline' do
 pod 'JMessage'
-
+pod 'JPush'
 end

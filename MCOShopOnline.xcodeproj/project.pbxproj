@@ -296,6 +296,7 @@
 		74DEE1AE20A1795100DA1C05 /* MCOTGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74DEE1AC20A1795100DA1C05 /* MCOTGViewController.xib */; };
 		74E6349E209F3E7100EAB076 /* MCOSelfInfoModifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E6349C209F3E7100EAB076 /* MCOSelfInfoModifyVC.m */; };
 		74E6349F209F3E7100EAB076 /* MCOSelfInfoModifyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E6349D209F3E7100EAB076 /* MCOSelfInfoModifyVC.xib */; };
+		74EBD8E620AEC2AC00F7D58C /* manifest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74EBD8E520AEC2AC00F7D58C /* manifest.plist */; };
 		74F480E22076627900434DFE /* MCOGoodDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F480E12076627900434DFE /* MCOGoodDetailVC.storyboard */; };
 		74F480E6207664D000434DFE /* MCOGoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F480E4207664D000434DFE /* MCOGoodTableViewCell.m */; };
 		74F480E7207664D000434DFE /* MCOGoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F480E5207664D000434DFE /* MCOGoodTableViewCell.xib */; };
@@ -505,6 +506,7 @@
 		7441300F207CE547003DEA99 /* MCShopMsgOVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCShopMsgOVC.h; sourceTree = "<group>"; };
 		74413010207CE547003DEA99 /* MCShopMsgOVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCShopMsgOVC.m; sourceTree = "<group>"; };
 		74413011207CE547003DEA99 /* MCShopMsgOVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCShopMsgOVC.xib; sourceTree = "<group>"; };
+		7447D8FB20AE901100519B82 /* MCOShopOnline.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MCOShopOnline.entitlements; sourceTree = "<group>"; };
 		744ACB96207A366B0074F49F /* XMGLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGLoginRegisterViewController.m; sourceTree = "<group>"; };
 		744ACB97207A366B0074F49F /* XMGLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMGLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		744ACB98207A366B0074F49F /* XMGLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGLoginRegisterViewController.h; sourceTree = "<group>"; };
@@ -846,6 +848,8 @@
 		74E6349B209F3E7100EAB076 /* MCOSelfInfoModifyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOSelfInfoModifyVC.h; sourceTree = "<group>"; };
 		74E6349C209F3E7100EAB076 /* MCOSelfInfoModifyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCOSelfInfoModifyVC.m; sourceTree = "<group>"; };
 		74E6349D209F3E7100EAB076 /* MCOSelfInfoModifyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCOSelfInfoModifyVC.xib; sourceTree = "<group>"; };
+		74EBD8E420AEC2A400F7D58C /* MCOShopOnline.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = MCOShopOnline.ipa; sourceTree = "<group>"; };
+		74EBD8E520AEC2AC00F7D58C /* manifest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = manifest.plist; sourceTree = "<group>"; };
 		74F480DE2076626B00434DFE /* MCOGoodDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOGoodDetailVC.h; sourceTree = "<group>"; };
 		74F480E12076627900434DFE /* MCOGoodDetailVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MCOGoodDetailVC.storyboard; sourceTree = "<group>"; };
 		74F480E3207664D000434DFE /* MCOGoodTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOGoodTableViewCell.h; sourceTree = "<group>"; };
@@ -1000,6 +1004,7 @@
 		741ECE652071CE6B0012D0A2 /* MCOShopOnline */ = {
 			isa = PBXGroup;
 			children = (
+				7447D8FB20AE901100519B82 /* MCOShopOnline.entitlements */,
 				741ECE982071CEB80012D0A2 /* Classes */,
 				741ECE6C2071CE6B0012D0A2 /* Main.storyboard */,
 				741ECE6F2071CE6B0012D0A2 /* Assets.xcassets */,
@@ -1088,6 +1093,8 @@
 		741ECEB72071CEB80012D0A2 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				74EBD8E520AEC2AC00F7D58C /* manifest.plist */,
+				74EBD8E420AEC2A400F7D58C /* MCOShopOnline.ipa */,
 				741ECEBA2071CEB80012D0A2 /* Category */,
 				741ECE662071CE6B0012D0A2 /* AppDelegate.h */,
 				741ECE672071CE6B0012D0A2 /* AppDelegate.m */,
@@ -2352,6 +2359,11 @@
 					741ECE622071CE6B0012D0A2 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					741ECE7A2071CE6B0012D0A2 = {
 						CreatedOnToolsVersion = 9.2;
@@ -2475,6 +2487,7 @@
 				74C8FD012074B21800B0C48A /* MCOMeVC.storyboard in Resources */,
 				749CF22120A893F500C2A314 /* JCHATToolBar.xib in Resources */,
 				749CF21320A890F100C2A314 /* JCHATShowTimeCell.xib in Resources */,
+				74EBD8E620AEC2AC00F7D58C /* manifest.plist in Resources */,
 				741394A32098790C00F20BCB /* MCOOrderAddressVC.xib in Resources */,
 				74412F7B207C846A003DEA99 /* MCOGoodPickerVC.xib in Resources */,
 				7458CC932094B5D600E759D9 /* MCOAddCommonAddrVC.xib in Resources */,
@@ -2827,6 +2840,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2884,6 +2898,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -2910,8 +2926,10 @@
 			baseConfigurationReference = 922202E6FE8A5AB1B0A804F1 /* Pods-MCOShopOnline.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MCOShopOnline/MCOShopOnline.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UG826ZVVW3;
+				DEVELOPMENT_TEAM = 323ES9JM55;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MCOShopOnline/Classes/Lib/SDK/Required",
@@ -2923,7 +2941,7 @@
 				INFOPLIST_FILE = MCOShopOnline/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mco.shoponline.MCOShopApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mco.njcct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2934,8 +2952,11 @@
 			baseConfigurationReference = DCC17C176EF83280D7592BC5 /* Pods-MCOShopOnline.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MCOShopOnline/MCOShopOnline.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UG826ZVVW3;
+				DEVELOPMENT_TEAM = 323ES9JM55;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MCOShopOnline/Classes/Lib/SDK/Required",
@@ -2947,7 +2968,7 @@
 				INFOPLIST_FILE = MCOShopOnline/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mco.shoponline.MCOShopApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mco.njcct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
