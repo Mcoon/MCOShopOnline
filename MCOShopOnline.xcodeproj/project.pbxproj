@@ -297,6 +297,7 @@
 		74E6349E209F3E7100EAB076 /* MCOSelfInfoModifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E6349C209F3E7100EAB076 /* MCOSelfInfoModifyVC.m */; };
 		74E6349F209F3E7100EAB076 /* MCOSelfInfoModifyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E6349D209F3E7100EAB076 /* MCOSelfInfoModifyVC.xib */; };
 		74EBD8E620AEC2AC00F7D58C /* manifest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74EBD8E520AEC2AC00F7D58C /* manifest.plist */; };
+		74EBD8E820AEC58300F7D58C /* install.html in Resources */ = {isa = PBXBuildFile; fileRef = 74EBD8E720AEC58300F7D58C /* install.html */; };
 		74F480E22076627900434DFE /* MCOGoodDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F480E12076627900434DFE /* MCOGoodDetailVC.storyboard */; };
 		74F480E6207664D000434DFE /* MCOGoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F480E4207664D000434DFE /* MCOGoodTableViewCell.m */; };
 		74F480E7207664D000434DFE /* MCOGoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F480E5207664D000434DFE /* MCOGoodTableViewCell.xib */; };
@@ -850,6 +851,7 @@
 		74E6349D209F3E7100EAB076 /* MCOSelfInfoModifyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCOSelfInfoModifyVC.xib; sourceTree = "<group>"; };
 		74EBD8E420AEC2A400F7D58C /* MCOShopOnline.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = MCOShopOnline.ipa; sourceTree = "<group>"; };
 		74EBD8E520AEC2AC00F7D58C /* manifest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = manifest.plist; sourceTree = "<group>"; };
+		74EBD8E720AEC58300F7D58C /* install.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = install.html; sourceTree = "<group>"; };
 		74F480DE2076626B00434DFE /* MCOGoodDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOGoodDetailVC.h; sourceTree = "<group>"; };
 		74F480E12076627900434DFE /* MCOGoodDetailVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MCOGoodDetailVC.storyboard; sourceTree = "<group>"; };
 		74F480E3207664D000434DFE /* MCOGoodTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOGoodTableViewCell.h; sourceTree = "<group>"; };
@@ -1012,6 +1014,7 @@
 				741ECE742071CE6B0012D0A2 /* Info.plist */,
 				7478DBFA207F40EB008DEBA6 /* messages.plist */,
 				741ECE752071CE6B0012D0A2 /* main.m */,
+				74EBD8E720AEC58300F7D58C /* install.html */,
 			);
 			path = MCOShopOnline;
 			sourceTree = "<group>";
@@ -2457,6 +2460,7 @@
 				74C35D122078E9F7008B4A36 /* MCOXCPhotoCell.xib in Resources */,
 				7441300E207CDA60003DEA99 /* MCOShopDynamicViC.xib in Resources */,
 				74E6349F209F3E7100EAB076 /* MCOSelfInfoModifyVC.xib in Resources */,
+				74EBD8E820AEC58300F7D58C /* install.html in Resources */,
 				74412FE7207C8628003DEA99 /* TZImagePickerController.bundle in Resources */,
 				74FF84B9209EE69600DE5BD8 /* MCORegisterMemVC.xib in Resources */,
 				743567F0208F736D005CED3C /* MCOGoodEditSub1VC.xib in Resources */,
